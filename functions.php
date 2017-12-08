@@ -1,20 +1,19 @@
 <?php 
-/**
- * Proper way to enqueue scripts and styles.
- */
-function load_scripts() {		//change function name
+
+function load_scripts() {
 	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' );
     wp_enqueue_style( 'bootstrap_styles', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" );
     wp_enqueue_style( 'style-css', get_stylesheet_uri() );
     wp_enqueue_style( 'main-css', get_template_directory_uri()."/assets/css/main.css" );
     wp_enqueue_script( 'bootstrap_scripts', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", array("jquery"), '1.0.0', true );
-
+	wp_enqueue_script( 'gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js', array(), false, true );
+	wp_enqueue_script( 'main-js', get_template_directory_uri()."/assets/js/main.js" );
 }
-add_action( 'wp_enqueue_scripts', 'load_scripts' );		//hook in wordpress
+
+add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
 
 // no closing php tag for whatever reason!!!
-
 
 add_theme_support("menus");
 

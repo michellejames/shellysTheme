@@ -1,0 +1,52 @@
+footer {
+	display: flex;
+	justify-content: center;
+	background: $white;
+	padding: 15px 0;
+	position: relative;
+
+	&:before {
+		position: absolute;
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		right: 0;
+		top: 0;
+		background: $white;
+		transform: skewY(-2deg);
+		transform-origin: 0 100%;
+
+		@media screen and (min-width: $lg-break) {
+		    transform: skewY(-1.3deg) translateY(3%);
+		}
+	}
+
+	.sitemap {
+		display: flex;
+		justify-content: center;
+
+		& a {
+			list-style: none;
+			margin-left: 50px;
+			text-transform: uppercase;
+			font-family: 'WorkSans-Thin';
+			font-size: 2rem;
+			z-index: 5;
+			text-decoration: none;
+			color: $darkgray;
+
+			&:hover {
+				color: orange;
+			}
+
+			&:first-of-type {
+				margin-left: 0;
+			}
+		}
+
+		& i {
+			color: red;
+		}
+	}
+}

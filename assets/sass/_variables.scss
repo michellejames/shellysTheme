@@ -1,3 +1,4 @@
+$sm-break: 500px;
 $md-break: 768px;
 $lg-break: 1000px;
 $xl-break: 1200px;
@@ -6,3 +7,13 @@ $white: #fff;
 $green: #24AE9B;
 $lightgray: #F5F6F7;
 $darkgray: #525D67;
+
+@font-face {
+  font-family: 'WorkSans-Thin';
+  src: url('../fonts/WorkSans-Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'WorkSans-Regular';
+  src: url('../fonts/WorkSans-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
