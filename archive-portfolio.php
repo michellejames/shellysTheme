@@ -2,7 +2,7 @@
 
 <h1 class="title">Portfolio</h1>
 
-<div class="row">
+<div class="work-pieces-parent">
 	
 	<?php
 	$args = array (
@@ -54,7 +54,7 @@
 			  <div class="<?php echo $class_terms; ?> work-pieces">
 			    <a href="<?php the_permalink(); ?>">
 			      <div style="background-image: url(<?php the_field("image"); ?>)"></div>
-			      <!-- <p><?php echo the_field("description"); ?></p> -->
+			      <p><?php echo the_field("description"); ?></p>
 			    </a>
 			  </div>
 			<?php
