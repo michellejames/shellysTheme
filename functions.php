@@ -71,10 +71,9 @@ function portfolio() {
 	);
 	$args = array(
 		'label'                 => __( 'Portfolio', 'text_domain' ),
-		'description'           => __( 'Post Type Description', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor' ),
-		//'taxonomies'            => array( 'category', 'post_tag' ),
+		'supports'              => array( ),
+		'taxonomies'            => array( ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -83,18 +82,18 @@ function portfolio() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,
+		'has_archive'           => true,		
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'Portfolio', $args );
+	register_post_type( 'portfolio', $args );
 
 	// Register Custom Taxonomy
 	$labels = array(
 		'name'                       => _x( 'Departments', 'Taxonomy General Name', 'text_domain' ),
 		'singular_name'              => _x( 'Department', 'Taxonomy Singular Name', 'text_domain' ),
-		'menu_name'                  => __( 'Departments', 'text_domain' ),
+		'menu_name'                  => __( 'Taxonomy', 'text_domain' ),
 		'all_items'                  => __( 'All Items', 'text_domain' ),
 		'parent_item'                => __( 'Parent Item', 'text_domain' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
@@ -122,7 +121,8 @@ function portfolio() {
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'Department', array( 'portfolio' ), $args );
+	register_taxonomy( 'taxonomy', array( 'portfolio' ), $args );
+
+	
 }
 add_action( 'init', 'portfolio', 0 );
-

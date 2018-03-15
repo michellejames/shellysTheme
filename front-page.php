@@ -55,23 +55,6 @@
 		$the_query = new WP_Query( $args );
 
 		?>
-		<div class="filter">
-			<a class="filter-link show-all" href="#">All</a>
-			<?php
-				$args = array (
-					'taxonomy' => 'Department',
-					'hide_empty' => false,
-				);
-				$terms = get_terms($args);
-				//print_r($terms);
-
-				foreach ($terms as $t) { ?>
-					<!-- t because first letter of variable term -->
-					<a class="filter-link" data-id="<?php echo $t->slug; ?>" href="#">
-						<?php echo $t->name; ?>
-					</a>
-				<?php } ?>
-		</div>
 		<br/><br/>
 		<?php
 		// The Loop
